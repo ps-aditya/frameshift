@@ -1,0 +1,12 @@
+﻿{
+    "timestamp_utc":  "2026-10-01T14:51:21.5906043Z",
+    "os_build":  "19045",
+    "last_boot":  "2026-09-30T09:40:21.9812440+05:30",
+    "uptime_h":  34.68,
+    "startup_total":  12,
+    "startup_triageable":  8,
+    "disk_free_gb":  67.3,
+    "power":  "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+    "boot_perf":  "needs-elevation: UnauthorizedAccessException",
+    "label":  "Not-tested (need 3x controlled reboots + elevated Event 100 for verdict)"
+}
