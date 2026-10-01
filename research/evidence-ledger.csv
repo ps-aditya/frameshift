@@ -1,0 +1,12 @@
+rule_id,claim,source_url,source_date,evidence_grade,test_machine,workload,repetitions,result,regressions,rollback_test,reviewer,status
+baseline.game-mode-enable,"Enable Game Mode to improve consistency (not guaranteed FPS)",https://www.microsoft.com/en-ca/windows/windows-11-pc-gaming,2026-09-30,C,,,,Not tested,,,proposed
+baseline.game-bar-disable,"Disable Xbox Game Bar to fix random FPS drops/stutter (Panjno/community claim)",https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-for-gaming/p1,2026-09-30,C,,,,Not tested,,,proposed
+baseline.power-plan-high-perf,"Set High performance / Ultimate Performance power plan for gaming",https://support.microsoft.com/help/4002019,2026-09-30,C,,,,Not tested,,,proposed
+baseline.hags-enable,"Enable Hardware-Accelerated GPU Scheduling (HAGS) for lower latency/higher FPS",https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling,2026-09-30,C,,,,Not tested,,,proposed
+baseline.sysmain-disable-generic,"Disable SysMain/Superfetch + Prefetch on SSD for perf (generic rule)",https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd,2026-09-30,D,,,,Not tested,,,proposed
+baseline.visual-effects-best-perf,"Adjust visual effects for best performance to improve responsiveness",https://support.microsoft.com/help/4002019,2026-09-30,B,,,,Not tested,,,researching
+baseline.startup-apps-triage,"Disable unused startup apps to improve boot-to-ready/responsiveness (per-app consent)",https://support.microsoft.com/help/4002019,2026-09-30,B,,,,Not tested,,,researching
+baseline.storage-sense-cleanup,"Use Storage Sense + Disk Cleanup for space (NOT Prefetch delete) to reduce disk pressure",https://support.microsoft.com/help/4002019,2026-09-30,B,,,,Not tested,,,researching
+baseline.driver-update-guidance,"Update GPU driver + Windows for game stability/perf (guidance only, no auto-replace)",https://www.microsoft.com/en-ca/windows/windows-11-pc-gaming,2026-09-30,A,,,,Not tested,,,proposed
+baseline.debloat-appx-bulk,"Bulk AppX/debloat removal speeds gaming (WinUtil/Win11Debloat generic claim)",https://github.com/ChrisTitusTech/winutil;https://github.com/Raphire/Win11Debloat,2026-09-30,D,,,,Not tested,,,proposed
+baseline.timer-hpet-mmcss-pagefile-group,"ISLC/timer/HPET-BCDEdit/MMCSS-registry/manual-pagefile fixes stutter (grouped high-risk class)",https://github.com/sebastianspicker/cs2-opt/blob/main/docs/windows-scheduler.md,2026-09-30,D,,,,Not tested,,,proposed
