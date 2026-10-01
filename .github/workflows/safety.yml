@@ -1,0 +1,18 @@
+# FrameShift safety CI — runs 19 guardrail checks on every push/PR.
+# windows runner gives real kernel + registry sandbox; all tests are DryRun/synthetic (no live mutations).
+name: safety
+on: [push, pull_request]
+jobs:
+  guardrails:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refusal suite (7 paths)
+        shell: powershell
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File tests/safety/Test-Refusals.ps1
+      - name: Config matrix (12 scenarios)
+        shell: powershell
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File tests/safety/Test-Matrix.ps1
+      - name: Tier0 inventory smoke (read-only)
+        shell: powershell
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File src/inventory/Get-FrameShiftInventory.ps1 | Out-String | Select-Object -First 20
