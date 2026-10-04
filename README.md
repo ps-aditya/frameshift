@@ -37,5 +37,15 @@ A Windows 10/11 tool for older or low-end PCs, starting with a narrowly defined 
 ## Important note
 The initial reference notes contain examples of registry edits, service disabling, cache deletion, timer/HPET changes, and forcing power/GPU scheduling settings. Treat those as **research leads, not approved optimizations**. A tweak is not safe or useful merely because a tutorial or script recommends it. In particular, do not ship a bulk debloat script or a universal “apply all tweaks” button.
 
+## Run the v0.1-pilot app
+
+Double-click `app\Run.bat`, or from an (optionally elevated) PowerShell:
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -File app\FrameShift.ps1
+```
+
+Flow: **Scan My PC** (read-only Tier0 profile) → PC profile + opportunity count → diagnosis (deterministic; optional `FS_AI_TEXT` advisory paragraph never changes actions) → Recommendations (**Recommended / Low priority / Advice only / Not recommended**) → pick ONE startup entry → exact-change preview → type `YES` to consent → journal-before-mutate → allowlisted apply → verify → honest result (improvement / no meaningful change / inconclusive, never fabricated) → optional verified rollback. Win11 and non-19045 builds are refused with reasons. No apply-all, no security changes, no model-generated commands.
+
 ## First milestone
 Demonstrate one safe, repeatable intervention on a defined test setup; collect a baseline, apply the change with consent, rerun the same workload, report the result and uncertainty, and prove rollback. If no meaningful benefit is reproducible, do not ship that intervention.

@@ -40,4 +40,5 @@ try { $profile['startup_apps'] = @(Get-CimInstance Win32_StartupCommand | Select
 try { $s = Get-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy' -ErrorAction Stop; $profile['storage_sense'] = ($s | Out-String).Trim() } catch { $profile['storage_sense'] = 'unknown/not-set' }
 
 $profile['note'] = 'Tier0 read-only. No changes made. Redact before sharing.'
+try { $ch = (Get-CimInstance Win32_SystemEnclosure).ChassisTypes -join ','; $profile['chassis'] = $ch } catch { $profile['chassis'] = 'unknown' }
 $profile | ConvertTo-Json -Depth 4
